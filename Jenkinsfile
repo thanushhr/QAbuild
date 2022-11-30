@@ -7,7 +7,7 @@ stage ('TEST PARALLEL') {
       steps {
         echo "This is BUILD1" 
         sh '''
-          make
+          mvn package
           exit 0
           '''
         }
