@@ -1,5 +1,6 @@
 pipeline {
   agent any
+	stage {
 stage ('TEST PARALLEL') {
     parallel {
     stage ('BUILD1') {
@@ -49,4 +50,5 @@ stage ('TEST PARALLEL') {
         }
       }
     }  
+	}
 }
