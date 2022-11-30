@@ -3,7 +3,7 @@ pipeline {
 	stages {
 stage ('TEST PARALLEL') {
     parallel {
-    stage ('BUILD1') {
+    stage ('MAVEN') {
       steps {
         echo "This is BUILD1" 
         sh '''
@@ -12,7 +12,7 @@ stage ('TEST PARALLEL') {
           '''
         }
       } 
-	  stage ('BUILD2') {
+	  stage ('GRADLE') {
       steps {
         echo "This is BUILD2" 
         sh '''
@@ -21,7 +21,7 @@ stage ('TEST PARALLEL') {
           '''
         }
       } 
-	  stage ('BUILD3') {
+	  stage ('APACHE ANT') {
       steps {
         echo "This is BUILD3" 
         sh '''
@@ -30,7 +30,7 @@ stage ('TEST PARALLEL') {
           '''
         }
       } 
-	  stage ('BUILD4') {
+	  stage ('SBT') {
       steps {
         echo "This is BUILD4" 
         sh '''
@@ -39,7 +39,7 @@ stage ('TEST PARALLEL') {
           '''
         }
       } 
-      stage ('BUILD5') {
+      stage ('MSBuild') {
       steps {
         echo "This is BUILD5" 
         sh '''
