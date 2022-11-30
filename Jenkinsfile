@@ -7,7 +7,7 @@ stage ('TEST PARALLEL') {
       steps {
         echo "This is BUILD1" 
         sh '''
-          cat hello
+          bash hello.sh
           exit 0
           '''
         }
