@@ -5,7 +5,7 @@ stage ('TEST PARALLEL') {
     parallel {
     stage ('BUILD C') {
       steps {
-        echo "This is BUILD1" 
+        echo "This is C Build" 
         sh '''
           make
           exit 0
@@ -15,25 +15,25 @@ stage ('TEST PARALLEL') {
 	  stage ('MAVEN') {
 		  agent { label 'node1' }
       steps {
-        echo "This is BUILD2" 
+        echo "This is Maven Build" 
         sh '''
           mvn package
           exit 0
           '''
         }
       } 
-	  stage ('APACHE ANT') {
+	  stage ('GRADLE') {
       steps {
-        echo "This is BUILD3" 
+        echo "This is Gradle Build" 
         sh '''
           echo "p1"
           exit 0
           '''
         }
       } 
-	  stage ('SBT') {
+	  stage ('APACHE ANT') {
       steps {
-        echo "This is BUILD4" 
+        echo "This is Ant Build" 
         sh '''
           echo "p1"
           exit 0
@@ -42,7 +42,7 @@ stage ('TEST PARALLEL') {
       } 
       stage ('MSBuild') {
       steps {
-        echo "This is BUILD5" 
+        echo "This is MS Build" 
         sh '''
           echo "p2"
           exit 0
