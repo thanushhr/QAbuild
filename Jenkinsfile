@@ -26,7 +26,7 @@ stage ('TEST PARALLEL') {
       steps {
         echo "This is Gradle Build" 
         sh '''
-          echo "p1"
+          echo "hello gradle"
           exit 0
           '''
         }
