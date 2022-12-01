@@ -23,7 +23,6 @@ stage ('TEST PARALLEL') {
         }
       } 
 	  stage ('GRADLE') {
-		  agent { label 'node1' }
       steps {
         echo "This is Gradle Build" 
         sh '''
