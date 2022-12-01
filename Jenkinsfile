@@ -12,8 +12,8 @@ stage ('TEST PARALLEL') {
           '''
         }
       } 
-	  stage ('MAVEN') {
-		  agent { label 'node1' }
+stage ('MAVEN') {
+agent { label 'node1' }
       steps {
         echo "This is Maven Build" 
         sh '''
@@ -22,7 +22,8 @@ stage ('TEST PARALLEL') {
           '''
         }
       } 
-	  stage ('GRADLE') {
+stage ('GRADLE') {
+agent { label 'node1' }
       steps {
         echo "This is Gradle Build" 
         sh '''
@@ -31,7 +32,7 @@ stage ('TEST PARALLEL') {
           '''
         }
       } 
-	  stage ('APACHE ANT') {
+stage ('APACHE ANT') {
       steps {
         echo "This is Ant Build" 
         sh '''
@@ -40,7 +41,7 @@ stage ('TEST PARALLEL') {
           '''
         }
       } 
-      stage ('MSBuild') {
+stage ('MSBuild') {
       steps {
         echo "This is MS Build" 
         sh '''
