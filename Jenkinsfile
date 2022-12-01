@@ -3,16 +3,17 @@ pipeline {
 	stages {
 stage ('TEST PARALLEL') {
     parallel {
-    stage ('MAVEN') {
+    stage ('BUILD C') {
       steps {
         echo "This is BUILD1" 
         sh '''
-          mvn package
+          make
           exit 0
           '''
         }
       } 
-	  stage ('GRADLE') {
+	  stage ('MAVEN') {
+		  agent { label 'node1' }
       steps {
         echo "This is BUILD2" 
         sh '''
