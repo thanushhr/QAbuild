@@ -36,7 +36,7 @@ stage ('APACHE ANT') {
       steps {
         echo "This is Ant Build" 
         sh '''
-          echo "p1"
+          echo "ant build"
           exit 0
           '''
         }
@@ -45,7 +45,7 @@ stage ('MSBuild') {
       steps {
         echo "This is MS Build" 
         sh '''
-          echo "p2"
+          echo "MSbuild"
           exit 0
           '''
           }
