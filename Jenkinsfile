@@ -17,7 +17,7 @@ stage ('TEST PARALLEL') {
       steps {
         echo "This is BUILD2" 
         sh '''
-          echo "p1"
+          mvn build
           exit 0
           '''
         }
